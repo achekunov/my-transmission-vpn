@@ -34,6 +34,7 @@ COPY xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
 COPY options.l2tpd.client /etc/ppp/options.l2tpd.client
 COPY startup.sh /
 COPY route.sh /
+COPY status.sh /
 
 # ports and volumes
 EXPOSE 9091 51413

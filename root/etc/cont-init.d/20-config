@@ -2,7 +2,7 @@
 
 # make folders
 mkdir -p \
-	/downloads/{complete,incomplete} /watch
+	/downloads/{video,shared,music} /watch
 
 # copy config
 [[ ! -f /config/settings.json ]] && cp \
@@ -17,8 +17,9 @@ chown abc:abc \
 	/config/settings.json \
 	/config/blocklist-update.sh \
 	/downloads \
-	/downloads/complete \
-	/downloads/incomplete \
+        /downloads/video \
+        /downloads/shared \
+        /downloads/music \
 	/watch
 
 chmod 755 /config/blocklist-update.sh
