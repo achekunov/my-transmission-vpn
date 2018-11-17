@@ -8,4 +8,5 @@
 
 # run daily blocklist update
 0 3 * * * /config/blocklist-update.sh 2>&1
-0 * * * * /status.sh 2>&1
+*/10 * * * * /status.sh 2>&1
+0 0 1 * * rm -f /config/vpn.log
