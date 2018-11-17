@@ -1,6 +1,7 @@
 2 projects linuxserver/docker-transmission and ubergarm/l2tp-ipsec-vpn-client in one container
 
-##Build
+## Build
+
 docker build -t my-transmission-vpn .
 
 ## Run
@@ -36,9 +37,16 @@ Now run it (you can daemonize of course after debugging):
 
 
 -v /config - where transmission should store config files and logs
+
 -v /downloads - local path for downloads
+
 -v /watch - watch folder for torrent files
+
 -e PGID for GroupID
+
 -e PUID for UserID 
+
 Sometimes when using data volumes (-v flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user PUID and group PGID. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" ™.
+
 -e TZ for timezone information, eg Europe/London
+
