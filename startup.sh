@@ -9,10 +9,13 @@ sed -i 's/password .*/password '$VPN_PASSWORD'/' /etc/ppp/options.l2tpd.client
 sed -i 's/HOST=.*/HOST='$VPN_LOCAL_GW_IP'/' /status.sh
 
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
+echo $TZ > /etc/timezone
+echo $TZ > /etc/TZ
+unset TZ
 
 cat >/route.sh <<EOL
 #!/bin/sh
-sleep 40
+sleep 20
 ip route add ${VPN_SERVER_IPV4}/32 via ${DOCKER_NET_GW}
 ip route del default
 ip route add default via ${VPN_LOCAL_GW_IP}
